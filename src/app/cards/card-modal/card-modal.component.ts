@@ -20,9 +20,12 @@ export class CardModalComponent implements OnInit {
       title: ['', Validators.required],  
       name: '',
       phone: ['', Validators.required],
-      email: '',
+      email: [''],
       address: '',
     })
   }
 
+    addCard(): void {
+      console.log(this.cardForm.value);
+    } 
 }
