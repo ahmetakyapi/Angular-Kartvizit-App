@@ -1,8 +1,13 @@
 <main>
-    <h1 class="page-title">Kartvizitler</h1>
-  <p class="page-description">
-      Kartvizitleri girmek için lütfen butona tıklayınız.
-  </p>
+   <div class="d-flex align-items-center">
+      <div class="flex-grow-1">
+        <h1 class="page-title">Kartvizitler</h1>
+        <p class="page-description">
+            Kartvizitleri girmek için lütfen butona tıklayınız.
+        </p>
+      </div>
+      <button mat-flat-button color="primary" (click)="openAddCardModal()">Yeni Kartvizit Ekle</button>
+   </div>
   <hr>
   <div class="cards">
       <div class="row">
