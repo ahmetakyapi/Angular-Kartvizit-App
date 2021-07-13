@@ -28,7 +28,7 @@ export class CardsComponent implements OnInit {
     });
   }
  
-  getCards():void {
+  getCards(): void {
     this.cardService.getCards()
     .subscribe((res: Card[]) => {
       this.cards = res;

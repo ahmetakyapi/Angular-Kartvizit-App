@@ -1,5 +1,27 @@
 <h2 mat-dialog-title>Kartvizit Oluşturma</h2>
 <mat-dialog-content class="mat-typography">
+  <form class='add-cards' [formGroup]= "cardForm">
+    <mat-form-field class="add-cards-width">
+      <mat-label>Mesleği(veya Sıfatı)</mat-label>
+      <input matInput formControlName="title" placeholder="Software Engineer">
+    </mat-form-field>
+    <mat-form-field class="add-cards-width">
+      <mat-label>Ad-Soyad veya Firma Adı</mat-label>
+      <input matInput formControlName="name" placeholder="Ahmet Akyapı">
+    </mat-form-field>  
+    <mat-form-field class="add-cards-width">
+      <mat-label>Telefon</mat-label>
+      <input matInput formControlName="phone" type="tel" placeholder="0555 555 55 55">
+    </mat-form-field>  
+    <mat-form-field class="add-cards-width">
+      <mat-label>E-Posta Adresi</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="info@ahmet.dev">
+    </mat-form-field>  
+    <mat-form-field class="add-cards-width">
+      <mat-label>Adres</mat-label>
+      <input matInput formControlName="address" placeholder="İstanbul, Başakşehir">
+    </mat-form-field>  
+  </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Vazgeç</button>
