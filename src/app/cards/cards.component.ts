@@ -23,17 +23,23 @@ export class CardsComponent implements OnInit {
   }
 
   openAddCardModal(): void {
-    this.dialog.open(CardModalComponent, {
+   const dialog= this.dialog.open(CardModalComponent, {
       width: '400px'
     });
+
+    dialog.afterClosed().subscribe( res => {
+      if(res) {
+        this.getCards();
+      }
+    });
   }
- 
-  getCards(): void {
+
+   getCards(): void {
     this.cardService.getCards()
     .subscribe((res: Card[]) => {
+      console.log(res);
       this.cards = res;
     })
   }
    
 }
- 

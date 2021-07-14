@@ -39,7 +39,7 @@ export class CardModalComponent implements OnInit {
         this._snackBar.open( res|| 'Kartvizit başarıyla eklendi.', '', {
           duration: 4000, 
         });
-        this.dialogRef.close();
+        this.dialogRef.close(true);
       });
       
     } 
