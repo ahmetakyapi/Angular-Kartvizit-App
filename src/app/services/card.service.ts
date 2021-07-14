@@ -17,8 +17,12 @@ export class CardService {
      return this.http.get<Card[]>(this.apiUrl + '/cards')
   }
 
-  addCard( card: Card) {
+  addCard( card: Card): Observable <any> {
     return this.http.post( this.apiUrl + '/cards', card);
+  }
+
+  updateCard( card: Card, cardId:number): Observable <any> {
+    return this.http.put( this.apiUrl + '/cards' + cardId, card);
   }
 
 }
