@@ -17,4 +17,8 @@ export class CardService {
      return this.http.get<Card[]>(this.apiUrl + '/cards')
   }
 
+  addCard( card: Card) {
+    return this.http.post( this.apiUrl + '/cards', card);
+  }
+
 }
