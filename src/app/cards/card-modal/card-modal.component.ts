@@ -57,4 +57,15 @@ export class CardModalComponent implements OnInit {
         this.dialogRef.close(true);
       })
     }
+
+    deleteCard() {
+      this.cardService.deleteCard(this.data.id)
+      .subscribe((res: any) => {
+        this._snackBar.open( res|| 'Kartvizit başarıyla silindi.', '', {
+          duration: 4000, 
+        });
+        this.cardService.getCards();
+        this.dialogRef.close();
+      });
+}
 }
