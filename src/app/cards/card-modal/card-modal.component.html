@@ -24,6 +24,11 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Vazgeç</button>
-  <button mat-button (click)="data ? updateCard() : addCard()">{{ data ? 'Düzenle' : 'Ekle'}}</button>
+<div class="flex-grow-1 text-start" *ngIf="data">
+<button mat-stroked-button color= "warn" (click)="deleteCard()">Sil</button>
+</div>
+<div>
+  <button mat-flat-button mat-dialog-close>Vazgeç</button>
+  <button mat-flat-button color= "primary" (click)="data ? updateCard() : addCard()" [disabled]="cardForm.invalid">{{ data ? 'Düzenle' : 'Ekle'}}</button>
+</div>
 </mat-dialog-actions>
