@@ -41,6 +41,7 @@ export class CardModalComponent implements OnInit {
         this._snackBar.open( res|| 'Kartvizit başarıyla eklendi.', '', {
           duration: 4000, 
         });
+        this.cardService.getCards();
         this.dialogRef.close(true);
       });
     } 
@@ -52,11 +53,8 @@ export class CardModalComponent implements OnInit {
         this._snackBar.open( res|| 'Kartvizit başarıyla güncellendi.', '', {
           duration: 4000, 
         });
+        this.cardService.getCards();
         this.dialogRef.close(true);
       })
     }
 }
-function res(res: any) {
-  throw new Error('Function not implemented.');
-}
-
